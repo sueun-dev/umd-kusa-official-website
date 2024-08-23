@@ -1,0 +1,169 @@
+# ===========================================================
+#  COPYRIGHT © 2024 Sueun Cho. ALL RIGHTS RESERVED.
+#
+#  This code is the intellectual property of Sueun Cho. 
+#  Unauthorized reproduction, distribution, or use of this code 
+#  is strictly prohibited. This notice must not be removed.
+#  For permission to use this code or any part thereof, please 
+#  contact the copyright holder.
+#  
+#  저작권 © 2024 조수은. 모든 권리 보유.
+#
+#  이 코드는 조수은의 지적 재산입니다. 이 코드의 무단 복제, 배포, 
+#  또는 사용은 엄격히 금지됩니다. 이 주석을 삭제하지 마십시오.
+#  이 코드 또는 그 일부를 사용하려면 저작권자에게 문의하십시오.
+#  E-mail : sueun.dev@gamil.com
+#  gitrhub : sueun-dev
+# ===========================================================
+
+
+===============================================================
+                    Project Log - KUSA Website
+===============================================================
+
+Date: August 2024
+Version: Beta 1.9.3
+===============================================================
+
+Updates:
+---------------------------------------------------------------
+1. Feature Added:
+   - Implemented user authentication for file upload and deletion using Flask. 
+   - The system now verifies username and password before allowing file operations.
+   - Added a file deletion feature that prompts for authentication each time a file is deleted, ensuring security.
+
+---------------------------------------------------------------
+2. File Handling:
+   - Files are stored in the 'uploads' directory. 
+   - Allowed file types are restricted to PDFs, with a maximum upload size of 16 MB.
+   - Successfully implemented the database connection using SQLAlchemy and Flask-Migrate to manage uploaded files.
+
+---------------------------------------------------------------
+3. Download Update Log:
+   - A download link was added for users to access the update log directly from the website.
+
+===============================================================
+
+Next Steps:
+---------------------------------------------------------------
+- Finalize design tweaks for the user interface.
+- Test the system thoroughly to ensure all authentication mechanisms work as expected.
+
+===============================================================
+
+
+
+===============================================================
+                    Project Log - KUSA Website
+===============================================================
+
+Date: [Insert Date Here]
+Version: [Insert Version Here]
+===============================================================
+
+Updates:
+---------------------------------------------------------------
+1. Feature Added:
+   - [Insert details about new features or improvements here.]
+
+---------------------------------------------------------------
+2. File Handling:
+   - [Insert information about file management or database updates here.]
+
+---------------------------------------------------------------
+3. Security Update:
+   - [Insert details about authentication or security features here.]
+
+---------------------------------------------------------------
+4. User Interface:
+   - [Insert details about UI/UX changes here.]
+
+---------------------------------------------------------------
+5. Bug Fixes:
+   - [Insert information about bugs fixed here.]
+
+===============================================================
+
+Next Steps:
+---------------------------------------------------------------
+- [Insert upcoming tasks or improvements here.]
+
+===============================================================
+
+
+
+===============================================================
+                    Project Log - KUSA Website
+===============================================================
+
+Date: [Insert Date Here]
+Version: [Insert Version Here]
+===============================================================
+
+Updates:
+---------------------------------------------------------------
+1. Feature Added:
+   - [Insert details about new features or improvements here.]
+
+---------------------------------------------------------------
+2. File Handling:
+   - [Insert information about file management or database updates here.]
+
+---------------------------------------------------------------
+3. Security Update:
+   - [Insert details about authentication or security features here.]
+
+---------------------------------------------------------------
+4. User Interface:
+   - [Insert details about UI/UX changes here.]
+
+---------------------------------------------------------------
+5. Bug Fixes:
+   - [Insert information about bugs fixed here.]
+
+===============================================================
+
+Next Steps:
+---------------------------------------------------------------
+- [Insert upcoming tasks or improvements here.]
+
+===============================================================
+
+===============================================================
+                    Project Log - KUSA Website
+===============================================================
+
+Date: [Insert Date Here]
+Version: [Insert Version Here]
+===============================================================
+
+Updates:
+---------------------------------------------------------------
+1. Feature Added:
+   - [Insert details about new features or improvements here.]
+
+---------------------------------------------------------------
+2. File Handling:
+   - [Insert information about file management or database updates here.]
+
+---------------------------------------------------------------
+3. Security Update:
+   - [Insert details about authentication or security features here.]
+
+---------------------------------------------------------------
+4. User Interface:
+   - [Insert details about UI/UX changes here.]
+
+---------------------------------------------------------------
+5. Bug Fixes:
+   - [Insert information about bugs fixed here.]
+
+===============================================================
+
+Next Steps:
+---------------------------------------------------------------
+- [Insert upcoming tasks or improvements here.]
+
+===============================================================
+
+===============================================================
