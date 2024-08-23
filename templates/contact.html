@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>About KUSA</title>
+    <meta content="Learn more about the Korean Undergraduate Student Association (KUSA) at the University of Maryland. Discover our mission, values, and community." name="description" />
+
+    <meta content="KUSA, Korean Undergraduate Student Association, University of Maryland, UMD, Korean students, student association, Korean community" name="keywords" />
+    <meta content="Welcome to the official homepage of the Korean Undergraduate Student Association (KUSA) at the University of Maryland. Connect and engage with the Korean student community at UMD." name="description" />
+
+    <link href="static/img/university-of-maryland-seeklogo.svg" rel="icon" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <link href="static/lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="/static/css/style.css" rel="stylesheet" />
+  </head>
+
+  <style>
+    @keyframes subtle-glow {
+      0% {
+        box-shadow: 0 0 2px rgba(255, 215, 0, 0.2), 0 0 4px rgba(255, 215, 0, 0.2), 0 0 6px rgba(255, 215, 0, 0.2), 0 0 8px rgba(255, 215, 0, 0.2);
+      }
+      50% {
+        box-shadow: 0 0 4px rgba(255, 215, 0, 0.8), 0 0 8px rgba(255, 215, 0, 0.8), 0 0 12px rgba(255, 215, 0, 0.8), 0 0 16px rgba(255, 215, 0, 0.8);
+      }
+      100% {
+        box-shadow: 0 0 2px rgba(255, 215, 0, 0.2), 0 0 4px rgba(255, 215, 0, 0.2), 0 0 6px rgba(255, 215, 0, 0.2), 0 0 8px rgba(255, 215, 0, 0.2);
+      }
+    }
+    
+    .department {
+      display: none; /* 마우스 올리기 전에는 보이지 않음 */
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #333;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out; /* 투명도 애니메이션 추가 */
+    }
+    
+    .team-item-pre:hover .department {
+      display: block; /* 마우스를 올리면 보이게 함 */
+      opacity: 1;
+    }
+    
+    @keyframes glowing-border {
+      0% {
+        border-color: rgba(255, 215, 0, 0.4);
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.4);
+      }
+      50% {
+        border-color: rgba(255, 215, 0, 1);
+        box-shadow: 0 0 20px rgba(255, 215, 0, 1);
+      }
+      100% {
+        border-color: rgba(255, 215, 0, 0.4);
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.4);
+      }
+    }
+    
+    .team-item-pre {
+      border: 3px solid transparent;
+      animation: glowing-border 2s infinite alternate;
+      border-radius: 10px;
+      transition: transform 0.5s ease-in-out; /* 부드럽고 자연스러운 커짐 효과 */
+    }
+    
+    .team-item-pre:hover {
+      transform: scale(1.05); /* 마우스를 올리면 상자가 1.05배 커짐 */
+    }
+  </style>
+
+  <body>
+    <div class="container-fluid nav-bar bg-transparent">
+      <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
+        <a href="/" class="navbar-brand d-flex align-items-center text-center">
+          <div class="icon p-1 me-4">
+            <img class="img-fluid" src="static/img/university-of-maryland-seeklogo.svg" alt="Icon" style="width: 50px; height: 50px;" />
+          </div>
+          <!-- Desktop and tablet view -->
+          <h1 class="m-0 text-primary d-none d-md-block" style="font-size: 18px;">Uni of Maryland KUSA</h1>
+          <!-- Mobile view -->
+          <h1 class="m-0 text-primary d-block d-md-none" style="font-size: 18px;">U of M KUSA</h1>
+        </a>
+
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto">
+            <a href="/" class="nav-item nav-link">Home</a>
+            <a href="/about" class="nav-item nav-link active">HOF</a>
+            <a href="/upload" class="nav-item nav-link">Board</a>
+            <a href="/contact" class="nav-item nav-link">Contact</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Call to Action Start -->
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div class="bg-light rounded p-3">
+          <div class="bg-white rounded p-4" style="border: 1px dashed rgba(0, 185, 142, .3)">
+            <div class="row g-5 align-items-center">
+              <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                <img class="img-fluid rounded w-70" src="/static/img/professor_image.png" alt="" />
+              </div>
+              <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                <div class="mb-4">
+                  <h1 class="mb-3">Faculty Advisor: 서은숙 교수님</h1>
+                  <p>학력: 고려대 학사, 석사; 루이지애나 주립대 박사</p>
+                  <p>연구: 우주선 추적, 암흑물질 연구</p>
+                  <p>수상: 1997년 미국 신진 우수연구자상</p>
+                  <p>CREAM 프로젝트: NASA와 남극에서 우주선 측정 프로젝트 총괄</p>
+                  <p>ISS-CREAM: 국제우주정거장 우주선 검출기 설치 추진.</p>
+                  <p>학회: 2010년 미국 물리학회 회원</p>
+                  <p>공로: NASA 그룹 업적상, 미주한인상 수상</p>
+                  <p>활동: 메릴랜드 대학교 물리학부 종신 교수</p>
+                </div>
+                <a href="#" class="btn btn-secondary py-3 px-4" onclick="copyEmailToClipboard('seo@umd.edu'); return false;"><i class="fa fa-envelope me-2"></i>이메일</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+          <h1 class="mb-3">KUSA 회장단</h1>
+          <p>KUSA를 이끌어온 리더들</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="team-item-pre rounded overflow-hidden" style="max-width: 200px; margin: 0 auto;">
+              <div class="social-box bg-white text-center p-3">
+                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                <h5 class="fw-bold mb-0">윤준수</h5>
+                <small>President ~2023</small>
+                <p class="department">Computer Science</p>
+              </div>
+            </div>
+          </div>
+          <!-- 나머지 카드들도 동일한 방식으로 추가 정보 추가 -->
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="team-item-pre rounded overflow-hidden" style="max-width: 200px; margin: 0 auto;">
+              <div class="social-box bg-white text-center p-3">
+                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                <h5 class="fw-bold mb-0">???</h5>
+                <small>President 2019 ~ 2023</small>
+                <p class="department">Computer Science</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="team-item-pre rounded overflow-hidden" style="max-width: 200px; margin: 0 auto;">
+              <div class="social-box bg-white text-center p-3">
+                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                <h5 class="fw-bold mb-0">???</h5>
+                <small>President 2016 ~ 2019</small>
+                <p class="department">Computer Science</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+            <div class="team-item-pre rounded overflow-hidden" style="max-width: 200px; margin: 0 auto;">
+              <div class="social-box bg-white text-center p-3">
+                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                <h5 class="fw-bold mb-0">???</h5>
+                <small>President 2013 ~ 2016</small>
+                <p class="department">Computer Science</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team End -->
+    <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+      <div class="container py-5">
+        <div class="row g-5">
+          <div class="col-lg-3 col-md-6">
+            <h5 class="text-white mb-4">Get In Touch</h5>
+            <p class="mb-2">
+              <i class="fa fa-map-marker-alt me-3"></i>University of maryland KUSA
+            </p>
+            <p class="mb-2">
+              <i class="fa fa-envelope me-3"></i>umdkusa@gmail.com
+            </p>
+            <div class="d-flex pt-2">
+              <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/umdkusa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a class="btn btn-outline-light btn-social" href="https://open.kakao.com/o/g3B2xVwf" target="_blank"><i class=""></i>KakaoTalk</a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h5 class="text-white mb-4">Version Info</h5>
+            <p>Current Version: Beta 1.9.3</p>
+            <p>
+              <a href="/static/Log/patch_updates.txt" download class="text-white">Download Update Log</a>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h5 class="text-white mb-4">Legal</h5>
+            <p>Unauthorized use of content is strictly prohibited.</p>
+            <p>
+              For inquiries, contact us at <a href="mailto:umdkusa@gmail.com" class="text-white">umdkusa@gmail.com</a>.
+            </p>
+            <p>Please do not modify Legal, Developer, and Version sections without proper authorization.</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="team-item rounded overflow-hidden text-center" style="max-width: 150px; margin: 0 auto;">
+              <h5 class="text-white mb-4">Developer</h5>
+              <div class="position-relative">
+                <img class="img-fluid mx-auto d-block" src="static/img/sueuncho_02.jpg" alt="" style="max-width: 100%; height: auto;" />
+              </div>
+              <div class="social-box bg-white text-center p-3" style="padding: 0.75rem;">
+                <a class="btn btn-square mx-1" href="https://www.instagram.com/sueun.dev/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-square mx-1" href="https://github.com/sueun-dev" target="_blank"><i class="fab fa-github"></i></a>
+                <h5 class="fw-bold mb-0" style="font-size: 0.875rem;">Sueun Cho</h5>
+                <small style="font-size: 0.75rem; color: black;">Full Stack & Blockchain Developer</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="copyright">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+              &copy; <a class="border-bottom" href="#">KUSA</a>, All Right Reserved.
+            </div>
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+              Developed By <a class="border-bottom" href="https://github.com/sueun-dev">Sueun Cho</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Top -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="static/lib/wow/wow.min.js"></script>
+    <script src="static/lib/easing/easing.min.js"></script>
+    <script src="static/lib/waypoints/waypoints.min.js"></script>
+    <script src="static/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="static/js/main.js"></script>
+  </body>
+</html>
