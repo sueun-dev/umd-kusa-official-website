@@ -18,7 +18,7 @@
 
 from flask import (
     Flask, request, render_template, send_from_directory, abort, 
-    Response, redirect, url_for, flash, 
+    Response, redirect, url_for, flash, jsonify
 )  # Import necessary Flask modules and functions
 
 from flask_sqlalchemy import SQLAlchemy  # Import SQLAlchemy for database management
@@ -238,6 +238,16 @@ def contact():
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template("404.html"), 404
+
+@app.route("/api")
+def api():
+    """Return all file information as JSON."""
+    files = PDFFile.query.all()  # 데이터베이스에서 모든 파일 정보 조회
+    file_list = [
+        {"id": file.id, "filename": file.filename, "upload_date": file.upload_date.strftime("%Y-%m-%d %H:%M:%S")}
+        for file in files
+    ]  # 파일 정보를 JSON 친화적 형식으로 변환
+    return jsonify(file_list)  # JSON 형식으로 파일 정보 반환
 
 if __name__ == "__main__":
     with app.app_context():
