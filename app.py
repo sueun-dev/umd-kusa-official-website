@@ -252,7 +252,7 @@ def api():
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()  # Create database tables
-    app.run(port=5000, debug=True)
+    app.run(port=5000)
 
 # ===========================================================
 #  COPYRIGHT © 2024 Sueun Cho. ALL RIGHTS RESERVED.
