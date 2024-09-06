@@ -19,7 +19,7 @@ This repository contains the source code for the official website of the Korean 
 
 ## Technology Stack
 
-- **Backend**: Flask (Python)
+- **Backend**: Flask (Python), Side (Django)
 - **Database**: PostgreSQL
 - **Frontend**: HTML, CSS, JavaScript
 - **Deployment**: Google Cloud Platform (GCP) Compute Engine
