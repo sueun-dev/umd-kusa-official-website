@@ -124,3 +124,4 @@ function confirmPresident() {
         return false; // Prevent the form submission
     }
 }
+

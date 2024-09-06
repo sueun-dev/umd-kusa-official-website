@@ -16,6 +16,41 @@
 #  gitrhub : sueun-dev
 # ===========================================================
 
+===============================================================
+                    Project Log - KUSA Website
+===============================================================
+
+Date: September 05 2024
+Version: 2.0.0
+===============================================================
+
+Updates:
+---------------------------------------------------------------
+1. Obfuscation Settings:
+   - Completed the implementation of code obfuscation for enhanced security. 
+   - The source code has been obfuscated to protect against reverse engineering and unauthorized access.
+
+---------------------------------------------------------------
+2. PostgreSQL and Django Integration:
+   - Successfully migrated from Flask to Django for better scalability and enhanced features.
+   - Integrated PostgreSQL as the primary database, replacing the previous database system.
+   - All existing functionalities (file upload, authentication) are now fully compatible with Django and PostgreSQL.
+
+---------------------------------------------------------------
+3. Minor Bug Fixes:
+   - Addressed various minor bugs in the system, including UI/UX issues and backend inconsistencies.
+   - Improved error handling and edge case management for smoother user experience.
+
+===============================================================
+
+Next Steps:
+---------------------------------------------------------------
+- Perform extensive testing on the newly integrated Django and PostgreSQL environment.
+- Optimize database queries for faster file operations.
+- Review and finalize the system for production deployment.
+
+===============================================================
+
 
 ===============================================================
                     Project Log - KUSA Website
@@ -52,7 +87,6 @@ Next Steps:
 ===============================================================
 
 
-
 ===============================================================
                     Project Log - KUSA Website
 ===============================================================
@@ -128,6 +162,8 @@ Next Steps:
 - [Insert upcoming tasks or improvements here.]
 
 ===============================================================
+
+
 
 ===============================================================
                     Project Log - KUSA Website
