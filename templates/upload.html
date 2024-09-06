@@ -21,7 +21,10 @@
           <div class="icon p-1 me-4">
             <img class="img-fluid" src="static/img/university-of-maryland-seeklogo.svg" alt="Icon" style="width: 50px; height: 50px;" />
           </div>
-          <h1 class="m-0 text-primary d-none d-md-block" style="font-size: 18px;">Uni of Maryland KUSA</h1>
+          <!-- Desktop and tablet view -->
+          <h1 class="m-0 text-primary d-none d-md-block" style="font-size: 18px;">Univ of Maryland KUSA</h1>
+          <!-- Mobile view -->
+          <h1 class="m-0 text-primary d-block d-md-none" style="font-size: 18px;">U of M KUSA</h1>
         </a>
         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -34,6 +37,7 @@
         </div>
       </nav>
     </div>
+    
 
     <div class="container-xxl py-5">
       <div class="container">
@@ -45,20 +49,20 @@
 
         <div class="mt-5">
           <h2 class="text-center mb-4">Uploaded Files</h2>
-          <div class="row g-4">
+          <div class="row g-4" id="file-list">
             {% for file in files %}
-              <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="card">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="card">
                   <div class="card-body">
-                    <h5 class="card-title">{{ file.filename }}</h5>
-                    <p class="card-text">Uploaded on: {{ file.upload_date }}</p>
-                    <a href="/download/{{ file.filename }}" class="btn btn-primary">Download</a>
-                    <form action="/delete/{{ file.id }}" method="POST" style="display:inline;" onsubmit="return confirmPresident()">
-                      <button type="submit" class="btn btn-danger mt-2">Delete</button>
-                    </form>
+                      <h5 class="card-title">{{ file.filename }}</h5>
+                      <p class="card-text">Uploaded on: {{ file.upload_date }}</p>
+                      <a href="/download/{{ file.filename }}" class="btn btn-primary" style="margin-top: 2px;">Download</a>
+                      <form action="/delete/{{ file.id }}" method="POST" style="display:inline;" onsubmit="return confirmPresident()">
+                          <button type="submit" class="btn btn-danger" style="margin-top: 2px;">Delete</button>
+                      </form>
                   </div>
-                </div>
               </div>
+          </div>
             {% endfor %}
           </div>
         </div>
@@ -104,7 +108,7 @@
 
           <div class="col-lg-3 col-md-6">
             <h5 class="text-white mb-4">Version Info</h5>
-            <p>Current Version: Beta 1.9.3</p>
+            <p>Current Version: 2.0.0</p>
             <p>
               <a href="/static/Log/patch_updates.txt" download class="text-white">Download Update Log</a>
             </p>Developed By <a class="border-bottom" href="https://github.com/sueun-dev">Sueun Cho</a>
@@ -133,7 +137,7 @@
             </div>
             <!-- Adjusted margin for the "Project Manager" text -->
             <h5 class="text-white mb-4" style="margin-top: 20px;">Project Manager</h5> <!-- Added margin-top to create space -->
-            <div class="team-item d-flex align-items-center rounded overflow-hidden text-center" style="max-width: 300px; margin: 0 auto; height: 100px;">
+            <div class="team-item d-flex align-items-center rounded overflow-hidden text-center" style="max-width: 300px; margin: 0 auto 20px; height: 100px;">
               <div class="position-relative" style="width: 100px; height: 100px;">
                 <img class="img-fluid w-100 h-100" src="static/img/KakaoTalk_Photo_2024-08-22-20-54-12.jpeg" alt="" style="object-fit: cover;" />
               </div>
