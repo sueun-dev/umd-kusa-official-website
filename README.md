@@ -8,6 +8,15 @@ The diagram above represents the architecture of the KUSA UMD official website, 
 
 This repository contains the source code for the official website of the Korean Undergraduate Student Association (KUSA) at the University of Maryland. The website was built using Flask, HTML, CSS, JavaScript, and PostgreSQL, and has been deployed on a Google Cloud Platform (GCP) Compute Engine instance with HTTPS and domain configuration.
 
+
+—
+
+## Contributors
+- **Sueun Cho**  
+  *Blockchain & Full Stack Developer*
+
+—
+
 ## Key Features
 
 - **Flask Backend**: The backend functionality, such as routing, authentication, and file uploads, was handled using Flask, a Python web framework.
@@ -101,7 +110,3 @@ This project is the official website of the KUSA at the University of Maryland. 
 ## 기여 및 라이선스
 
 이 프로젝트는 메릴랜드 대학교 KUSA의 공식 웹사이트로, 코드 사용 및 배포는 저작권자의 승인 없이 불가함. 자세한 내용은 LICENSE 파일을 참조 바람.
-
-
-Developed by Sueun Cho
-Blockchain & Full Stack Developer
