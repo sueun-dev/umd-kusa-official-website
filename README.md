@@ -5,7 +5,7 @@ The diagram above represents the architecture of the KUSA UMD official website, 
 ### KUSA UMD Official Website
 
 ---
-
+https://www.umdkusa.com
 This repository contains the source code for the official website of the Korean Undergraduate Student Association (KUSA) at the University of Maryland. The website was built using Flask, HTML, CSS, JavaScript, and PostgreSQL, and has been deployed on a Google Cloud Platform (GCP) Compute Engine instance with HTTPS and domain configuration.
 
 
