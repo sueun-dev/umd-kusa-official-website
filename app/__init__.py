@@ -10,6 +10,7 @@ from .exceptions import register_error_handlers
 db = SQLAlchemy()
 migrate = Migrate()
 
+
 def create_app():
     # Determine the project root (one level up from this file)
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -29,6 +30,7 @@ def create_app():
 
     # Register blueprints (use relative import for 'routes.main')
     from .routes.main import bp as main_bp
+
     app.register_blueprint(main_bp)
 
     # Register global error handlers
