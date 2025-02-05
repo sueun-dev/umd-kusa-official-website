@@ -4,27 +4,43 @@
     <meta charset="utf-8" />
     <title>KUSA Upload</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="KUSA, Korean Undergraduate Student Association, University of Maryland, UMD, Korean students, student association, Korean community" name="keywords" />
-    <meta content="Upload your files to the Korean Undergraduate Student Association (KUSA) Board at the University of Maryland." name="description" />
+
+    <!-- SEO 메타 태그 -->
+    <meta name="keywords" content="KUSA, Korean Undergraduate Student Association, University of Maryland, UMD, Korean students, student association, Korean community, 자료 업로드, 파일 공유" />
+    <meta name="description" content="메릴랜드 대학교 한인 학생회(KUSA) 자료 업로드 페이지. 사진, 문서, 과제 등 다양한 파일을 업로드하고 공유하세요." />
+
+    <!-- Open Graph 메타 태그 (카카오톡/페이스북 등 미리보기용) -->
+    <meta property="og:title" content="KUSA Board - Upload and Share" />
+    <meta property="og:description" content="메릴랜드 대학교 한인 학생회(KUSA)의 게시판 페이지입니다. 사진, 문서, 과제 등을 자유롭게 업로드하고 공유하세요." />
+    <meta property="og:image" content="static/img/university-of-maryland-seeklogo.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://umdkusa.com/upload" />
+
+    <!-- 파비콘 -->
     <link href="static/img/university-of-maryland-seeklogo.svg" rel="icon" />
+
+    <!-- 외부 CSS/폰트 -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="static/lib/animate/animate.min.css" rel="stylesheet" />
     <link href="static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
     <link href="/static/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/static/css/style.css" rel="stylesheet" />
+
+    <!-- Reference to External CSS (upload_custom.css) -->
+    <link href="/static/css/upload_custom.css" rel="stylesheet" />
   </head>
+
   <body>
     <div class="container-fluid nav-bar bg-transparent">
       <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
         <a href="/" class="navbar-brand d-flex align-items-center text-center">
           <div class="icon p-1 me-4">
-            <img class="img-fluid" src="static/img/university-of-maryland-seeklogo.svg" alt="Icon" style="width: 50px; height: 50px;" />
+            <img class="img-fluid img-icon-size" src="static/img/university-of-maryland-seeklogo.svg" alt="Icon" />
           </div>
           <!-- Desktop and tablet view -->
-          <h1 class="m-0 text-primary d-none d-md-block" style="font-size: 18px;">Univ of Maryland KUSA</h1>
+          <h1 class="m-0 text-primary d-none d-md-block heading-desktop">Univ of Maryland KUSA</h1>
           <!-- Mobile view -->
-          <h1 class="m-0 text-primary d-block d-md-none" style="font-size: 18px;">U of M KUSA</h1>
+          <h1 class="m-0 text-primary d-block d-md-none heading-mobile">U of M KUSA</h1>
         </a>
         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -37,7 +53,6 @@
         </div>
       </nav>
     </div>
-    
 
     <div class="container-xxl py-5">
       <div class="container">
@@ -45,29 +60,36 @@
           <h1 class="mb-3">KUSA 자료 업로드 및 공유</h1>
           <p>KUSA 커뮤니티와 함께하는 활동 자료를 공유하세요. 사진, 문서자료 등 다양한 파일을 업로드하여 KUSA의 성장과 발전에 기여하세요.</p>
         </div>
-        <hr class="my-4" style="border: 2px solid #ccc; width: 100%;" />
+        <hr class="my-4 hr-custom" />
 
         <div class="mt-5">
           <h2 class="text-center mb-4">Uploaded Files</h2>
           <div class="row g-4" id="file-list">
             {% for file in files %}
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-              <div class="card">
+              <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="card position-relative">
+                  {% if file.is_new %}
+                    <span class="badge bg-danger position-absolute top-0 end-0 m-2">new</span>
+                  {% endif %}
                   <div class="card-body">
-                      <h5 class="card-title">{{ file.filename }}</h5>
-                      <p class="card-text">Uploaded on: {{ file.upload_date }}</p>
-                      <a href="/download/{{ file.filename }}" class="btn btn-primary" style="margin-top: 2px;">Download</a>
-                      <form action="/delete/{{ file.id }}" method="POST" style="display:inline;" onsubmit="return confirmPresident()">
-                          <button type="submit" class="btn btn-danger" style="margin-top: 2px;">Delete</button>
-                      </form>
+                    <h5 class="card-title">{{ file.filename }}</h5>
+                    <p class="card-text">Uploaded on:
+                      {{ file.upload_date.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+                    <a href="/download/{{ file.filename }}" class="btn btn-primary btn-mt">View</a>
+                    <form action="/delete/{{ file.id }}" method="POST" class="form-inline" onsubmit="return confirmPresident()">
+                      <button type="submit" class="btn btn-danger btn-mt">Delete</button>
+                    </form>
                   </div>
+                </div>
               </div>
-          </div>
             {% endfor %}
           </div>
+
+          <!-- Added Korean text here, right below the files grid -->
+          <p class="text-center mt-3">업로드된 파일 목록입니다. 필요한 자료를 자유롭게 확인하고 활용해 보세요.</p>
         </div>
 
-        <hr class="my-4" style="border: 2px solid #ccc; width: 100%;" />
+        <hr class="my-4 hr-custom" />
 
         <div class="row g-4">
           <div class="col-lg-8 mx-auto wow fadeInUp" data-wow-delay="0.3s">
@@ -89,20 +111,21 @@
       </div>
     </div>
 
+    <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white-50 footer pt-3 mt-3 wow fadeIn" data-wow-delay="0.1s">
       <div class="container py-2">
         <div class="row g-5">
           <div class="col-lg-3 col-md-6">
             <h5 class="text-white mb-4">Get In Touch</h5>
             <p class="mb-2">
-              <i class="fa fa-map-marker-alt me-3"></i>University of maryland KUSA
+              <i class="fa fa-map-marker-alt me-3"></i>University of Maryland KUSA
             </p>
             <p class="mb-2">
               <i class="fa fa-envelope me-3"></i>umdkusa@gmail.com
             </p>
             <div class="d-flex pt-2">
               <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/umdkusa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a>
-              <a class="btn btn-outline-light btn-social" href="https://open.kakao.com/o/g3B2xVwf" target="_blank"><i class=""></i>KakaoTalk</a>
+              <a class="btn btn-outline-light btn-social" href="https://open.kakao.com/o/g3B2xVwf" target="_blank">KakaoTalk</a>
             </div>
           </div>
 
@@ -111,15 +134,18 @@
             <p>Current Version: 2.0.0</p>
             <p>
               <a href="/static/Log/patch_updates.txt" download class="text-white">Download Update Log</a>
-            </p>Developed By <a class="border-bottom" href="https://github.com/sueun-dev">Sueun Cho</a>
+            </p>Developed By
+            <a class="border-bottom" href="https://github.com/sueun-dev">Sueun Cho</a>
           </div>
 
           <div class="col-lg-3 col-md-6">
             <h5 class="text-white mb-4">Legal</h5>
             <p>Unauthorized use of content is strictly prohibited.</p>
             <p>
-              For inquiries, contact us at <a href="mailto:umdkusa@gmail.com" class="text-white">umdkusa@gmail.com</a>.
-            </p>&copy; <a class="border-bottom" href="#">KUSA</a>, All Right Reserved.
+              For inquiries, contact us at
+              <a href="mailto:umdkusa@gmail.com" class="text-white">umdkusa@gmail.com</a>.
+            </p>&copy;
+            <a class="border-bottom" href="#">KUSA</a>, All Right Reserved.
           </div>
 
           <div class="col-lg-3 col-md-6">
@@ -136,7 +162,7 @@
               </div>
             </div>
             <!-- Adjusted margin for the "Project Manager" text -->
-            <h5 class="text-white mb-4" style="margin-top: 20px;">Project Manager</h5> <!-- Added margin-top to create space -->
+            <h5 class="text-white mb-4" style="margin-top: 20px;">Project Manager</h5>
             <div class="team-item d-flex align-items-center rounded overflow-hidden text-center" style="max-width: 300px; margin: 0 auto 20px; height: 100px;">
               <div class="position-relative" style="width: 100px; height: 100px;">
                 <img class="img-fluid w-100 h-100" src="static/img/KakaoTalk_Photo_2024-08-22-20-54-12.jpeg" alt="" style="object-fit: cover;" />
@@ -151,7 +177,9 @@
         </div>
       </div>
     </div>
+    <!-- Footer End -->
 
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="static/lib/wow/wow.min.js"></script>

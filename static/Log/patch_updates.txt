@@ -1,20 +1,89 @@
-# ===========================================================
-#  COPYRIGHT © 2024 Sueun Cho. ALL RIGHTS RESERVED.
-#
-#  This code is the intellectual property of Sueun Cho. 
-#  Unauthorized reproduction, distribution, or use of this code 
-#  is strictly prohibited. This notice must not be removed.
-#  For permission to use this code or any part thereof, please 
-#  contact the copyright holder.
-#  
-#  저작권 © 2024 조수은. 모든 권리 보유.
-#
-#  이 코드는 조수은의 지적 재산입니다. 이 코드의 무단 복제, 배포, 
-#  또는 사용은 엄격히 금지됩니다. 이 주석을 삭제하지 마십시오.
-#  이 코드 또는 그 일부를 사용하려면 저작권자에게 문의하십시오.
-#  E-mail : sueun.dev@gamil.com
-#  gitrhub : sueun-dev
-# ===========================================================
+===============================================================
+                    Project Log - KUSA Website
+===============================================================
+
+Date: February 06, 2025
+Version: 2.2.1
+===============================================================
+
+Updates:
+---------------------------------------------------------------
+1. Codebase Refinement:
+   - Switched all absolute imports to relative imports within the `app` package to resolve Pyright “ModuleNotFoundError” issues.
+   - Moved `pyproject.toml` and `poetry.lock` to the top-level directory, ensuring Poetry commands function correctly (e.g., `poetry run python run.py`).
+   - Cleaned up `.env` format to ensure `python-dotenv` parses environment variables without errors or warnings.
+
+2. Database & Dependencies:
+   - Installed `psycopg2` to enable PostgreSQL integration, ensuring seamless connection setup for future migrations.
+   - Verified that SQLAlchemy commands (`db.session.add()`, `db.session.commit()`) work consistently across the newly organized codebase.
+
+3. Error Handling & Type Checking:
+   - Addressed various Pyright type-checking reports by adding `secure_filename` imports, adjusting function signatures, and ensuring typed constructors for SQLAlchemy models where appropriate.
+   - Confirmed that type-checking passes with zero errors following each patch.
+
+4. User Interface & Documentation:
+   - No UI modifications performed during this patch. Maintained existing templates and static files without altering original language or design.
+   - Documented all changes in the project logs and updated instructions for running the app using Poetry.
+
+5. Security Update:
+   - No direct security enhancements in this patch cycle. Existing authentication mechanisms remain unchanged.
+
+---------------------------------------------------------------
+
+Next Steps:
+---------------------------------------------------------------
+- Perform comprehensive testing on the updated code structure to confirm reliability in production-like scenarios.
+- Refine database queries for any performance improvements, especially as the code evolves.
+- Explore additional linting and formatting tools (e.g., Ruff, Black) to maintain consistent coding standards.
+- Investigate further steps for improving continuous integration and deployment (CI/CD) pipelines.
+
+===============================================================
+
+
+===============================================================
+                    Project Log - KUSA Website
+===============================================================
+
+Date: October 26, Saturday
+Version: 2.1.0
+===============================================================
+
+Updates:
+---------------------------------------------------------------
+1. Feature Added:
+   - Implemented a "new" badge for recently uploaded files. Files uploaded within the last 7 days now display a red "new" label at the top-right corner of their respective file cards.
+   - Enhanced SEO optimization by modifying HTML meta tags, titles, and content to improve search engine ranking for the keyword "메릴랜드 대학교 한인 학생회."
+
+---------------------------------------------------------------
+2. File Handling:
+   - Adjusted file retrieval logic to display uploaded files in descending order, showing the newest files first without impacting the existing database structure or data.
+   - Added a dynamic attribute `is_new` to the file objects to determine if a file was uploaded within the last 7 days.
+
+---------------------------------------------------------------
+3. Security Update:
+   - No security changes were made during this update.
+
+---------------------------------------------------------------
+4. User Interface:
+   - Updated the `upload.html` template to include a "new" badge on file cards for recent uploads.
+   - Ensured that all existing text and content remained unaltered, strictly avoiding any unauthorized modifications to the original language or text.
+
+---------------------------------------------------------------
+5. Bug Fixes:
+   - Resolved an issue where files were not being displayed in the correct order after upload.
+   - Addressed a potential inconsistency in time zone handling by using `datetime.utcnow()` for time comparisons.
+
+===============================================================
+
+Next Steps:
+---------------------------------------------------------------
+- Explore further SEO enhancements to improve visibility in search engine results.
+- Implement localization features to support multiple languages without altering existing content.
+- Conduct a security audit to ensure all authentication mechanisms are robust and up-to-date.
+- Optimize the user interface for mobile devices to enhance user experience across all platforms.
+
+===============================================================
+
 
 ===============================================================
                     Project Log - KUSA Website

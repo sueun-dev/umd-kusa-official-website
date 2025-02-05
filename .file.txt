@@ -1,0 +1,10 @@
+hfoise-13i3fe-kusa < postgres 비밀번호
+
+
+
+ID = kusa_admin_access_db
+PASSCODE = BilueTizer83KiverL3312
+
+psql -h your-server-ip -U kusa_admin_access_db -d mydb
+
+postgresql+psycopg2://kusa_admin_access_db:BilueTizer83KiverL3312@svc.sel4.cloudtype.app:32519/mydb

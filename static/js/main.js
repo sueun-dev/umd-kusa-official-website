@@ -1,21 +1,3 @@
-/* # ===========================================================
-#  COPYRIGHT © 2024 Sueun Cho. ALL RIGHTS RESERVED.
-#
-#  This code is the intellectual property of Sueun Cho. 
-#  Unauthorized reproduction, distribution, or use of this code 
-#  is strictly prohibited. This notice must not be removed.
-#  For permission to use this code or any part thereof, please 
-#  contact the copyright holder.
-#  
-#  저작권 © 2024 조수은. "코드" 작성에 대해서만 모든 권리 보유.
-#
-#  이 코드는 조수은의 지적 재산입니다. 이 코드의 무단 복제, 배포, 
-#  또는 사용은 엄격히 금지됩니다. 이 주석을 삭제하지 마십시오.
-#  이 코드 또는 그 일부를 사용하려면 저작권자에게 문의하십시오.
-#  E-mail : sueun.dev@gamil.com
-#  gitrhub : sueun-dev
-# =========================================================== */
-
 (function ($) {
     "use strict";
 
