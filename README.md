@@ -74,4 +74,12 @@ Proprietary software owned by the Korean Undergraduate Student Association (KUSA
 
 ---
 
-_Last Updated: February 06, 2025_
+
+## Developer
+**Developer**: Sueun Cho
+**E-mail**:  sueun.dev@gmail.com
+**LinkedIn**: [LinkedIn](https://www.linkedin.com/in/sueun-cho-625262252/) 
+
+---
+
+_Last Updated: February 05, 2025_
