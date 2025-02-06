@@ -1,16 +1,23 @@
-<!-- 404.html in /templates -->
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page Not Found</title>
-    <!-- Use url_for to point to the file in the 'css' subfolder -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/error_styles.css') }}">
-  </head>
-  <body>
-    <h1 class="error-title">404</h1>
-    <p class="sub-text">죄송합니다. 찾으시는 페이지를 찾을 수 없습니다.</p>
-    <a href="/" class="home-btn">홈으로 돌아가기</a>
-  </body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Page Not Found - 404{% endblock title %}
+
+{% block content %}
+<div class="container text-center my-5">
+    <!-- Optional: Larger, more eye-catching heading -->
+    <h1 class="display-1 fw-bold text-danger">404</h1>
+    <h2 class="mb-4">죄송합니다. 찾으시는 페이지를 찾을 수 없습니다.</h2>
+    <br>
+    <br>
+    <br>
+    <p class="mb-4">
+        요청하신 페이지가 존재하지 않거나 삭제되었습니다.
+        <br/>URL을 다시 확인해 주세요.
+    </p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="/" class="btn btn-primary btn-lg">홈으로 돌아가기</a>
+</div>
+{% endblock content %}

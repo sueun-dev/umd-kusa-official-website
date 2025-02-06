@@ -99,7 +99,7 @@ function copyEmailToClipboard(element) {
 }
 
 function confirmPresident() {
-    const isPresident = confirm("권한이 있으신가요?\n비밀번호를 7번 틀릴 시 24 시간동안 로그인이 불가능합니다");
+    const isPresident = confirm("업로드 권한이 있으신가요?\n비밀번호를 7번 틀릴 시 24 시간동안 로그인이 불가능합니다");
     if (isPresident) {
         return true;  // Proceed with the form submission
     } else {

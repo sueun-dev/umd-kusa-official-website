@@ -1,16 +1,22 @@
-<!-- 404.html in /templates -->
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page Not Found</title>
-    <!-- Use url_for to point to the file in the 'css' subfolder -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/error_styles.css') }}">
-  </head>
-  <body>
-    <h1 class="error-title">500</h1>
-    <p class="sub-text">죄송합니다. DB를 찾을 수 없습니다.</p>
-    <a href="/" class="home-btn">홈으로 돌아가기</a>
-  </body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Server Error - 500{% endblock title %}
+
+{% block content %}
+<div class="container text-center my-5">
+    <h1 class="display-1 fw-bold text-danger">500</h1>
+    <h2 class="mb-4">죄송합니다. 서버에 문제가 발생했습니다.</h2>
+    <br>
+    <br>
+    <br>
+    <p class="mb-4">
+        일시적인 문제거나 <strong>DB</strong>를 찾을 수 없어서 오류가 발생했습니다.
+        <br/>잠시 후에 다시 시도해 주세요.
+    </p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="/" class="btn btn-primary btn-lg">홈으로 돌아가기</a>
+</div>
+{% endblock content %}

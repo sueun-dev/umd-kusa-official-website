@@ -13,7 +13,6 @@ from flask import (
 )
 from werkzeug.utils import secure_filename
 
-# Relative imports to match your package structure
 from .. import db
 from ..models import PDFFile
 from ..config import Config
@@ -43,30 +42,25 @@ def upload_file():
             return redirect(request.url)
 
         file = request.files["file_input"]
-        # 1. Ensure we handle 'None' or empty filename
         raw_filename = file.filename or ""
         if not raw_filename:
             flash("No selected file", "danger")
             return redirect(request.url)
 
-        # 2. Check extension, then use secure_filename
         if file and allowed_file(raw_filename):
             filename = secure_filename(raw_filename)
             filepath = os.path.join(Config.UPLOAD_FOLDER, filename)
             file.save(filepath)
 
-            # 3. If your model has an __init__(filename: str)
             new_file = PDFFile(filename=filename)
             db.session.add(new_file)
             db.session.commit()
 
             files = PDFFile.query.order_by(PDFFile.upload_date.desc()).all()
-            # Mark files as 'new' if uploaded within 7 days
             for f in files:
                 f.is_new = (datetime.utcnow() - f.upload_date) <= timedelta(days=7)
             return render_template("upload.html", files=files, success=True)
 
-    # Handle GET request
     files = PDFFile.query.order_by(PDFFile.upload_date.desc()).all()
     for f in files:
         f.is_new = (datetime.utcnow() - f.upload_date) <= timedelta(days=7)
@@ -107,7 +101,7 @@ def page_not_found(e):
 
 @bp.errorhandler(500)
 def internal_error(error):
-    return render_template("404.html"), 500
+    return render_template("500.html"), 500
 
 
 @bp.route("/api")

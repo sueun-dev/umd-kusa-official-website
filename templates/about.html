@@ -1,400 +1,109 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- 기본 설정 -->
-    <meta charset="utf-8" />
-    <title>메릴랜드 대학교 한인 학생회 (KUSA) | About</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{% extends "base.html" %}
+{% set active_page = 'about' %}
+{% block title %}메릴랜드 대학교 한인 학생회 (KUSA) | About{% endblock %}
+{% block meta_keywords %}메릴랜드 대학교, 메릴랜드 대학교 한인 학생회, UMD 한인 학생회, KUSA, Korean Undergraduate Student Association, 회장단, 학회, 한인 커뮤니티, 유학생{% endblock %}
+{% block meta_description %}메릴랜드 대학교 한인학생회(KUSA) 소개 페이지. 지도 교수진, 역대 회장단, 그리고 KUSA의 역사 및 활동을 확인하세요.{% endblock %}
+{% block css %}
+<link href="/static/css/about_styles.css" rel="stylesheet" />
+{% endblock %}
 
-    <!-- 설명(description) 통합 & 확장 -->
-    <meta
-      name="description"
-      content="메릴랜드 대학교 한인학생회(KUSA) 소개 페이지. 지도 교수진, 역대 회장단, 그리고 KUSA의 역사 및 활동을 확인하세요."
-    />
-
-    <!-- 키워드(keywords) 보강 -->
-    <meta
-      name="keywords"
-      content="메릴랜드 대학교, 메릴랜드 대학교 한인 학생회, UMD 한인 학생회, KUSA, Korean Undergraduate Student Association, 회장단, 학회, 한인 커뮤니티, 유학생"
-    />
-
-    <!-- Open Graph(OG) 기본 태그 -->
-    <meta property="og:title" content="메릴랜드 대학교 한인 학생회 - About KUSA" />
-    <meta
-      property="og:description"
-      content="KUSA 소개, 지도 교수 Dr.서은숙, 역대 회장단(HOF) 정보를 제공하는 공식 페이지"
-    />
-    <meta
-      property="og:image"
-      content="static/img/university-of-maryland-seeklogo.svg"
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://umdkusa.com/about" />
-
-    <!-- 파비콘 & 기타 -->
-    <link href="static/img/university-of-maryland-seeklogo.svg" rel="icon" />
-
-    <!-- 외부 CSS / 폰트 -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <link href="static/lib/animate/animate.min.css" rel="stylesheet" />
-    <link href="static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet" />
-
-    <!-- External CSS (moved from inline <style> block) -->
-    <link href="/static/css/about_styles.css" rel="stylesheet" />
-  </head>
-
-  <body>
-    <div class="container-fluid nav-bar bg-transparent">
-      <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
-        <a href="/" class="navbar-brand d-flex align-items-center text-center">
-          <div class="icon p-1 me-4">
-            <img
-              class="img-fluid"
-              src="static/img/university-of-maryland-seeklogo.svg"
-              alt="Icon"
-              style="width: 50px; height: 50px;"
-            />
-          </div>
-          <!-- Desktop and tablet view -->
-          <h1
-            class="m-0 text-primary d-none d-md-block"
-            style="font-size: 18px;"
-          >
-            Univ of Maryland KUSA
-          </h1>
-          <!-- Mobile view -->
-          <h1
-            class="m-0 text-primary d-block d-md-none"
-            style="font-size: 18px;"
-          >
-            U of M KUSA
-          </h1>
-        </a>
-
-        <button
-          type="button"
-          class="navbar-toggler"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarCollapse"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <div class="navbar-nav ms-auto">
-            <a href="/" class="nav-item nav-link">Home</a>
-            <a href="/about" class="nav-item nav-link active">HOF</a>
-            <a href="/upload" class="nav-item nav-link">Board</a>
-            <a href="/news" class="nav-item nav-link">News</a>
-          </div>
-        </div>
-      </nav>
-    </div>
-
-    <!-- Call to Action Start -->
-    <div class="container-fluid header bg-white p-0">
-      <div class="container-xxl py-5">
-        <div class="container">
-          <div class="bg-light rounded p-3">
-            <div
-              class="bg-white rounded p-4"
-              style="border: 1px dashed rgba(0, 185, 142, .3)"
-            >
-              <div class="row g-5 align-items-center">
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                  <img
-                    class="img-fluid rounded w-70"
-                    src="/static/img/seo_eun_s.jpeg"
-                    alt="Faculty Advisor: Dr. 서은숙"
-                  />
-                </div>
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                  <div class="mb-4">
-                    <h1 class="mb-3">Faculty Advisor: Dr.서은숙</h1>
-                    <p>KUSA Advisor 2020 - present</p>
-                    <p>
-                      President of KASSTA (Korean-American AeroSpace Science and
-                      Technology Association), 2024-present.
-                    </p>
-                    <p>Korean-American Day Honoree, KEI, 2017</p>
-                    <p>President of Korean-American</p>
-                    <p>Scientists and Engineers</p>
-                    <p>Association, 2017-2018</p>
-                    <p>Scientist of the Year Award, KOFST & KSEA, 2015</p>
-                    <p>American Physical Society Fellow, 2010</p>
-                    <p>NASA Group Achievement Award, 2006 & 2011</p>
-                    <p>
-                      Presidential Early Career Award for Scientists and
-                      Engineers (White House), 1997
-                    </p>
-                  </div>
-                  <a
-                    href="#"
-                    class="btn btn-secondary py-3 px-4"
-                    onclick="copyEmailToClipboard('seo@umd.edu'); return false;"
-                    ><i class="fa fa-envelope me-2"></i>이메일</a
-                  >
-                </div>
+{% block content %}
+<!-- Faculty Advisor Section -->
+<div class="container-fluid header bg-white p-0">
+  <div class="container-xxl py-5">
+    <div class="container">
+      <div class="bg-light rounded p-3">
+        <div class="bg-white rounded p-4" style="border: 1px dashed rgba(0, 185, 142, .3)">
+          <div class="row g-5 align-items-center">
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+              <img class="img-fluid rounded w-70" src="/static/img/seo_eun_s.jpeg" alt="Faculty Advisor: Dr. 서은숙" />
+            </div>
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+              <div class="mb-4">
+                <h1 class="mb-3">Faculty Advisor: Dr.서은숙</h1>
+                <p>KUSA Advisor 2020 - present</p>
+                <p>President of KASSTA (Korean-American AeroSpace Science and Technology Association), 2024-present.</p>
+                <p>Korean-American Day Honoree, KEI, 2017</p>
+                <p>President of Korean-American</p>
+                <p>Scientists and Engineers</p>
+                <p>Association, 2017-2018</p>
+                <p>Scientist of the Year Award, KOFST & KSEA, 2015</p>
+                <p>American Physical Society Fellow, 2010</p>
+                <p>NASA Group Achievement Award, 2006 & 2011</p>
+                <p>Presidential Early Career Award for Scientists and Engineers (White House), 1997</p>
               </div>
+              <a href="javascript:void(0);" class="btn btn-secondary py-3 px-4" onclick="copyEmailToClipboard('seo@umd.edu'); return false;">
+                <i class="fa fa-envelope me-2"></i>이메일
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <div class="container-xxl py-5">
-      <div class="container">
-        <div
-          class="text-center mx-auto mb-5 wow fadeInUp"
-          data-wow-delay="0.1s"
-          style="max-width: 600px;"
-        >
-          <h1 class="mb-3">KUSA 회장단</h1>
-          <p>KUSA를 이끌어온 리더들</p>
+<!-- KUSA 회장단 Section -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+      <h1 class="mb-3">KUSA 회장단</h1>
+      <p>KUSA를 이끌어온 리더들</p>
+    </div>
+    <div class="row g-4">
+      <!-- Listing Box 1 -->
+      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="team-item-pre rounded overflow-hidden" style="max-width: 200px; margin: 0 auto;">
+          <div class="social-box bg-white text-center p-3">
+            <a class="btn btn-square mx-1" href="javascript:void(0);" onclick="event.preventDefault();">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <h5 class="fw-bold mb-0">윤준수</h5>
+            <small>President 2023 ~ 2025</small>
+            <p class="department">Nutritional Science</p>
+          </div>
         </div>
-        <div class="row g-4">
-          <div
-            class="col-lg-3 col-md-6 wow fadeInUp"
-            data-wow-delay="0.1s"
-          >
-            <div
-              class="team-item-pre rounded overflow-hidden"
-              style="max-width: 200px; margin: 0 auto;"
-            >
-              <div class="social-box bg-white text-center p-3">
-                <a class="btn btn-square mx-1" href=""
-                  ><i class="fab fa-instagram"></i
-                ></a>
-                <h5 class="fw-bold mb-0">윤준수</h5>
-                <small>President 2023 ~ 2025</small>
-                <p class="department">Nutritional Science</p>
-              </div>
-            </div>
+      </div>
+      <!-- Listing Box 2 -->
+      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="team-item-pre rounded overflow-hidden" style="max-width: 200px; margin: 0 auto;">
+          <div class="social-box bg-white text-center p-3">
+            <a class="btn btn-square mx-1" href="javascript:void(0);" onclick="event.preventDefault();">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <h5 class="fw-bold mb-0">정서연</h5>
+            <small>President 2023 ~ 2023</small>
+            <p class="department">Criminology</p>
           </div>
-          <div
-            class="col-lg-3 col-md-6 wow fadeInUp"
-            data-wow-delay="0.3s"
-          >
-            <div
-              class="team-item-pre rounded overflow-hidden"
-              style="max-width: 200px; margin: 0 auto;"
-            >
-              <div class="social-box bg-white text-center p-3">
-                <a class="btn btn-square mx-1" href=""
-                  ><i class="fab fa-instagram"></i
-                ></a>
-                <h5 class="fw-bold mb-0">정서연</h5>
-                <small>President 2023 ~ 2023</small>
-                <p class="department"></p>
-              </div>
-            </div>
+        </div>
+      </div>
+      <!-- Listing Box 3 -->
+      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="team-item-pre rounded overflow-hidden" style="max-width: 200px; margin: 0 auto;">
+          <div class="social-box bg-white text-center p-3">
+            <a class="btn btn-square mx-1" href="javascript:void(0);" onclick="event.preventDefault();">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <h5 class="fw-bold mb-0">임경호</h5>
+            <small>President 2020 ~ 2022</small>
+            <p class="department">info-science</p>
           </div>
-          <div
-            class="col-lg-3 col-md-6 wow fadeInUp"
-            data-wow-delay="0.5s"
-          >
-            <div
-              class="team-item-pre rounded overflow-hidden"
-              style="max-width: 200px; margin: 0 auto;"
-            >
-              <div class="social-box bg-white text-center p-3">
-                <a class="btn btn-square mx-1" href=""
-                  ><i class="fab fa-instagram"></i
-                ></a>
-                <h5 class="fw-bold mb-0">임경호</h5>
-                <small>President 2020 ~ 2022</small>
-                <p class="department">info-science</p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-lg-3 col-md-6 wow fadeInUp"
-            data-wow-delay="0.7s"
-          >
-            <div
-              class="team-item-pre rounded overflow-hidden"
-              style="max-width: 200px; margin: 0 auto;"
-            >
-              <div class="social-box bg-white text-center p-3">
-                <a class="btn btn-square mx-1" href=""
-                  ><i class="fab fa-instagram"></i
-                ></a>
-                <h5 class="fw-bold mb-0">이재은</h5>
-                <small>President 2019 ~ 2020</small>
-                <p class="department">info-science</p>
-              </div>
-            </div>
+        </div>
+      </div>
+      <!-- Listing Box 4 -->
+      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+        <div class="team-item-pre rounded overflow-hidden" style="max-width: 200px; margin: 0 auto;">
+          <div class="social-box bg-white text-center p-3">
+            <a class="btn btn-square mx-1" href="javascript:void(0);" onclick="event.preventDefault();">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <h5 class="fw-bold mb-0">이재은</h5>
+            <small>President 2019 ~ 2020</small>
+            <p class="department">info-science</p>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Footer Start -->
-    <div
-      class="container-fluid bg-dark text-white-50 footer pt-3 mt-3 wow fadeIn"
-      data-wow-delay="0.1s"
-    >
-      <div class="container py-2">
-        <div class="row g-5">
-          <div class="col-lg-3 col-md-6">
-            <h5 class="text-white mb-4">Get In Touch</h5>
-            <p class="mb-2">
-              <i class="fa fa-map-marker-alt me-3"></i>University of Maryland
-              KUSA
-            </p>
-            <p class="mb-2">
-              <i class="fa fa-envelope me-3"></i>umdkusa@gmail.com
-            </p>
-            <div class="d-flex pt-2">
-              <a
-                class="btn btn-outline-light btn-social"
-                href="https://www.instagram.com/umdkusa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                target="_blank"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a
-                class="btn btn-outline-light btn-social"
-                href="https://open.kakao.com/o/g3B2xVwf"
-                target="_blank"
-                >KakaoTalk</a
-              >
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <h5 class="text-white mb-4">Version Info</h5>
-            <p>Current Version: 2.0.0</p>
-            <p>
-              <a
-                href="/static/Log/patch_updates.txt"
-                download
-                class="text-white"
-                >Download Update Log</a
-              >
-            </p>
-            Developed By
-            <a class="border-bottom" href="https://github.com/sueun-dev"
-              >Sueun Cho</a
-            >
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <h5 class="text-white mb-4">Legal</h5>
-            <p>Unauthorized use of content is strictly prohibited.</p>
-            <p>
-              For inquiries, contact us at
-              <a href="mailto:umdkusa@gmail.com" class="text-white"
-                >umdkusa@gmail.com</a
-              >.
-            </p>
-            &copy;
-            <a class="border-bottom" href="#">KUSA</a>, All Right Reserved.
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <h5 class="text-white mb-4">Developer</h5>
-            <div
-              class="team-item d-flex align-items-center rounded overflow-hidden text-center"
-              style="max-width: 300px; margin: 0 auto; height: 100px;"
-            >
-              <div
-                class="position-relative"
-                style="width: 100px; height: 100px;"
-              >
-                <img
-                  class="img-fluid w-100 h-100"
-                  src="static/img/sueuncho_02.jpg"
-                  alt="Developer: Sueun Cho"
-                  style="object-fit: cover;"
-                />
-              </div>
-              <div
-                class="social-box bg-white text-start p-3"
-                style="flex-grow: 1; height: 100%;"
-              >
-                <h5 class="fw-bold mb-0" style="font-size: 0.875rem;">
-                  Sueun Cho
-                </h5>
-                <small
-                  style="font-size: 0.75rem; color: black;"
-                  >Full Stack & Blockchain Developer</small
-                >
-                <a
-                  class="btn mx-1 p-1"
-                  href="https://www.instagram.com/sueun.dev/"
-                  target="_blank"
-                  style="font-size: 1.2rem;"
-                  ><i class="fab fa-instagram"></i
-                ></a>
-                <a
-                  class="btn mx-1 p-1"
-                  href="https://github.com/sueun-dev"
-                  target="_blank"
-                  style="font-size: 1.2rem;"
-                  ><i class="fab fa-github"></i
-                ></a>
-              </div>
-            </div>
-            <!-- Adjusted margin for the "Project Manager" text -->
-            <h5 class="text-white mb-4" style="margin-top: 20px;">
-              Project Manager
-            </h5>
-            <!-- Added margin-top to create space -->
-            <div
-              class="team-item d-flex align-items-center rounded overflow-hidden text-center"
-              style="max-width: 300px; margin: 0 auto 20px; height: 100px;"
-            >
-              <div
-                class="position-relative"
-                style="width: 100px; height: 100px;"
-              >
-                <img
-                  class="img-fluid w-100 h-100"
-                  src="static/img/KakaoTalk_Photo_2024-08-22-20-54-12.jpeg"
-                  alt="Project Manager: Junsoo Yoon"
-                  style="object-fit: cover;"
-                />
-              </div>
-              <div
-                class="social-box bg-white text-start p-3"
-                style="flex-grow: 1; height: 100%;"
-              >
-                <h5 class="fw-bold mb-0" style="font-size: 0.875rem;">
-                  Junsoo Yoon
-                </h5>
-                <small
-                  style="font-size: 0.75rem; color: black;"
-                  >President KUSA</small
-                >
-                <a
-                  class="btn mx-1 p-1"
-                  href="https://www.instagram.com/j_watertree/"
-                  target="_blank"
-                  style="font-size: 1.2rem;"
-                  ><i class="fab fa-instagram"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Footer End -->
-
-    <!-- Back to Top -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="static/lib/wow/wow.min.js"></script>
-    <script src="static/lib/easing/easing.min.js"></script>
-    <script src="static/lib/waypoints/waypoints.min.js"></script>
-    <script src="static/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="static/js/main.js"></script>
-  </body>
-</html>
+  </div>
+</div>
+{% endblock %}
