@@ -1,0 +1,15 @@
+{
+  "@context": "https://schema.org",
+  "@type": "CollegeOrUniversity",
+  "name": "UMD News",
+  "description": "Latest news and updates from the University of Maryland, College Park.",
+  "url": "https://umdkusa.com/news",
+  "logo": "static/img/university-of-maryland-seeklogo.svg",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "College Park",
+    "addressRegion": "MD",
+    "addressCountry": "USA"
+  }
+}
+
