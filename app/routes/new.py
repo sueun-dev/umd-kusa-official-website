@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from bs4.element import Tag  # Import Tag for proper type checking
 from flask import Blueprint, render_template
 from openai import OpenAI
+from openai.types.chat import ChatCompletionMessageParam
 from typing import List, Dict, Any
 
 bp = Blueprint("news", __name__, url_prefix="/news")
@@ -57,7 +58,7 @@ class NewsFetcher:
                     continue
 
                 title = a_tag.get_text(strip=True)
-                link = a_tag.get("href", "#")
+                link = str(a_tag.get("href", "#"))
                 semi_div = article.select_one("div.mt-3.xl\\:text-lg")
                 semi_news = semi_div.get_text(strip=True) if isinstance(semi_div, Tag) else ""
                 time_tag = article.find("time")
@@ -105,13 +106,12 @@ class NewsFetcher:
         try:
             # Initialize the new OpenAI client
             client = OpenAI(api_key=api_key)
-            # Annotate messages with explicit type for Pyright.
-            messages: List[Dict[str, str]] = [
+            # Annotate messages with the SDK's param type for Pyright.
+            messages: List[ChatCompletionMessageParam] = [
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": prompt},
             ]
-            # The type stubs may complain; use type: ignore if necessary.
-            response = client.chat.completions.create(  # type: ignore
+            response = client.chat.completions.create(
                 model=default_model,
                 messages=messages,
                 temperature=0.7,

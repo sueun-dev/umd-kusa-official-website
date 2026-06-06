@@ -16,7 +16,13 @@ from werkzeug.utils import secure_filename
 from .. import db
 from ..models import PDFFile
 from ..config import Config
-from ..decorators import check_auth, authenticate
+from ..decorators import (
+    check_auth,
+    authenticate,
+    is_ip_blocked,
+    register_failed_attempt,
+)
+from ..exceptions import InvalidUsage
 from ..utils import allowed_file
 
 bp = Blueprint("main", __name__)
@@ -33,8 +39,16 @@ def index():
 @bp.route("/upload", methods=["GET", "POST"])
 def upload_file():
     if request.method == "POST":
+        ip = request.remote_addr
+        if is_ip_blocked(ip):
+            raise InvalidUsage(
+                "Your IP is blocked due to too many failed login attempts.",
+                status_code=403,
+            )
+
         auth = request.authorization
         if not auth or not check_auth(auth.username, auth.password):
+            register_failed_attempt(ip)
             return authenticate()
 
         if "file_input" not in request.files:
